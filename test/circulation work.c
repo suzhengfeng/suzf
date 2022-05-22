@@ -89,3 +89,71 @@ int main()
 		return 0;
 	}
 }*/
+/*
+//在屏幕中输出9*9乘法表
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int i = 0;
+	for (i = 1; i <= 9; i++)
+	{
+		int j = 1;
+		for (j = 1; j <= i; j++)
+		{
+			printf("%d*%d=%-2d", i, j, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+*/
+/*
+//给定两个数，求这两个数的最大公约数
+//辗转相除法
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int m = 0;
+	int n = 0;
+	int r = 0;
+	scanf("%d%d", &m, &n);
+	while (m % n)
+	{
+		r = m % n;
+		m = n;
+		n = r;
+	}
+	printf("%d\n", n);
+}*/
+//abc排序
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	scanf("%d%d%d", &a, &b, &c);
+	if (a < b)
+	{
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+	if (a < c)
+	{
+		int temp = a;
+		a = c;
+		c = temp;
+	}
+	if (b < c)
+	{
+		int temp = b;
+		b = c;
+		c = temp;
+	}
+	printf("%d%d%d\n", a, b, c);
+	return 0;
+}
