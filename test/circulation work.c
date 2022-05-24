@@ -225,3 +225,45 @@ int main()
 	return 0;
 }
 
+/*
+//判断润年
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	printf((a % 4 == 0 && a % 100 != 0) || a % 400 == 0 ? "yes" : "no");
+	return 0;
+}
+*/
+/*
+//判断整数能够被2 3 7中哪几个数整除并升序输出
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int main()
+{
+	int a;
+	scanf("%d", &a);
+	if (a % 2==0)
+	{
+		printf("2 ");
+		if (a % 3 == 0)
+		{
+			printf("3 ");
+			if (a % 7 == 0)
+			{
+				printf("7");
+			}
+		}
+		
+	}
+		
+	else
+	{
+        printf("n");
+	}
+		
+	return 0;
+}*/
+
