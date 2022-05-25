@@ -266,4 +266,64 @@ int main()
 		
 	return 0;
 }*/
-
+//简易计算器
+//方法1
+#include<stdio.h>
+int main()
+{
+    double a,b;
+    char ch;
+    while(scanf("%lf %c %lf",&a,&ch,&b)!=EOF)
+    {
+        if(ch=='+'||ch=='-'||ch=='*'||ch=='/')
+        {
+            if(ch=='+')
+                printf("%.4lf%c%.4lf=%.4lf\n",a,ch,b,a+b);
+                else if(ch=='-')
+                    printf("%.4lf%c%.4lf=%.4lf\n",a,ch,b,a-b);
+            else if(ch=='*')
+                printf("%.4lf%c%.4lf=%.4lf\n",a,ch,b,a*b);
+            else
+            {
+                if(b==0.0)
+                    printf("Wrong!Division by zero!\n");
+                else
+                    printf("%.4lf%c%.4lf=%.4lf\n",a,ch,b,a/b);
+            }
+        }
+        else
+            printf("Invalid operation!\n");
+    }
+    return 0;
+}
+//方法二
+#include<stdio.h>
+int main(void)
+{
+    double a,b;//精度问题导致用float无法通过
+    char sf;
+    scanf("%lf%c%lf",&a,&sf,&b);
+    switch(sf)
+    {
+        case '+':
+            printf("%.4f+%.4f=%.4f",a,b,a+b);
+            break;
+        case '-':
+            printf("%.4f-%.4f=%.4f",a,b,a-b);
+            break;
+        case '*':
+            printf("%.4f*%.4f=%.4f",a,b,a*b);//浮点数要注意精度问题
+            break;
+        case '/':
+            {
+                if(b<0.000001)
+                    printf("Wrong!Division by zero!");
+                else
+                    printf("%.4f/%.4f=%.4f",a,b,a/b);
+                break;
+            }
+        default:
+            printf("Invalid operation!");
+    }
+    return 0;
+}
