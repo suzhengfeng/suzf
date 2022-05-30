@@ -535,3 +535,51 @@ int main()
 	}
 	return 0;
 }
+//三角形
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    while(cin>>n)
+    {
+        for(int j=1;j<=n;j++)
+        {
+            if(j==n)//处理最后一行这种特殊情况。
+            {
+                for(int i=1;i<=n;i++)
+                    cout<<"* ";
+            }
+            else
+                for(int k=1;k<=n;k++)//前面n-1行地规律，当列等于第一列或者行和列等时，有*，否则没有。注意空格数。
+                {
+                    if(k==1||k==j)
+                        cout<<"* ";//一个*和一个空格
+                    else cout<<"  ";//两个空格
+                }
+            cout<<endl;
+        }
+    }
+    return 0;
+}
+//空心三角形
+#include<stdio.h>
+int main()
+{
+    int r,c,n;
+    while(scanf("%d",&n)!=EOF)
+    {
+        for(r=1;r<=n;r++)
+        {
+            for(c=1;c<=n;c++)
+            {
+                if(c==1||r==n||c==r)
+                printf("%-2c",'*');
+                else
+                printf("  ");
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}
