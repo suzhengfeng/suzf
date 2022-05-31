@@ -583,3 +583,38 @@ int main()
     }
     return 0;
 }
+//回文对称数
+#include<stdio.h>
+int main(){
+    long n;
+    scanf("%ld",&n);
+    long c=1;
+    while(c<=n){
+            int i=0;
+            long m=c;
+                while(m!=0){
+                    m/=10;
+                    i++;
+                }
+            m=c;
+            int arr[i];
+            int brr[i];
+            int j;
+            int g=0;
+                    for(j=0;j<i;j++){
+                        arr[j]=m%10;
+                        brr[i-j-1]=m%10;
+                        m/=10;
+                        if(arr[j]==brr[j]){
+                            g++;
+                        }
+                        if(g==i){
+                             printf("%ld\n",c);
+                            break;
+                        }
+                    
+                            }
+                    c++;
+    }
+    return 0;
+}
