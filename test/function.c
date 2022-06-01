@@ -47,3 +47,27 @@ int main()
 	}
 	return 0;
 }
+//ËØÊıºÍ
+#include<stdio.h>
+int issushu(int n){
+    int i;
+    if(n==1){
+    	return 0;
+	}
+    for(i=2;i<n;i++){
+        if(n%i==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+int main(){
+    int i,a,b,sum=0;
+    scanf("%d %d",&a,&b);
+    for(i=a;i<=b;i++){
+        if(issushu(i)){
+            sum+=i;
+        }
+    }
+    printf("%d",sum);
+}
