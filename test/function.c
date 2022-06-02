@@ -71,3 +71,54 @@ int main(){
     }
     printf("%d",sum);
 }
+//Êı×éÆ¥Åä
+#include <stdio.h>
+int num(int a,int b)
+{
+	if(a>=b)
+	return a-b;
+	else
+	return b-a;
+}
+int main()
+{
+    int n,m;
+    scanf("%d %d",&n,&m);
+    int a[100]={0};
+    int b[100]={0};
+    int sum1=0,sum2=0,min,k,l;
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<m;i++)
+    {
+        scanf("%d",&b[i]);
+    }
+	for(int i=0;i<n;i++)
+	{
+		sum1+=a[i];
+	}
+	min=sum1;
+	for(int i=0;i<m;i++)
+	{
+		sum2=b[i];
+		for(int j=i+1;j<=m;j++)
+		{
+			if(num(sum1,sum2)<min)
+			{
+				min=num(sum1,sum2);
+				k=i;
+				l=j;
+			}
+			sum2+=b[j];
+			
+		}
+	}
+	for(int i=k;i<l;i++)
+	{
+		printf("%d ",b[i]);
+	}
+  
+    return 0;
+}
