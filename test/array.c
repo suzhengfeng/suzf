@@ -54,3 +54,40 @@ int main(){
         printf("\n");
     }
 }
+//¾ØÕóÏàµÈÅĞ¶¨
+#include<stdio.h>
+int main()
+{
+    int arr1[10][10] = { 0 };
+    int arr2[10][10] = { 0 };
+    int i, j, m, n;
+    int sum=0;
+    scanf("%d %d", &m, &n);
+    for (i = 0; i<m; i++)
+    {
+        for (j = 0; j<n; j++)
+        {
+            scanf("%d ", &arr1[i][j]);
+        }
+    }
+    for (i = 0; i<m; i++)
+    {
+        for (j = 0; j<n; j++)
+        {
+            scanf("%d ", &arr2[i][j]);
+        }
+    }
+    for (i = 0; i<m; i++)
+    {
+        for (j = 0; j<n; j++)
+        {
+            if (arr1[i][j] == arr2[i][j])
+                sum++;
+        }
+    }
+    if (sum == m*n)
+        printf("Yes\n");
+    else
+        printf("No\n");
+    return 0;
+}
